@@ -1,5 +1,3 @@
-import { Role } from '@prisma/client';
-
 export interface VoteRequest {
   search?: string;
   sort: number;
