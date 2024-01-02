@@ -13,9 +13,8 @@ To stop run application, just run this command
 
 
 ## Username
-user: test@mail.com
-password: 1234
+- username: test@mail.com
+- password: 1234
 
-**All Password is : 12345**
 ---
 *Note: If you stop docker compose, all data will be destroy automatic*
