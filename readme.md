@@ -1,4 +1,9 @@
-# How to run project
+## Require
+  - Docker
+  - Node.js 18+
+  - Fast Internet :D
+
+## How to run project
 #### Start run this docker command
 
 ```docker compose up -d```
