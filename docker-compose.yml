@@ -18,7 +18,7 @@ services:
     depends_on:
       - db
       - react
-    # restart: always
+    restart: always
     networks:
       - m-network
 
