@@ -1,0 +1,9 @@
+{
+  "name": "test-muangthai-",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:thanarack/test-muangthai-.git",
+  "author": "Thanarack <thanarackc@gmail.com>",
+  "scripts": {},
+  "license": "MIT"
+}

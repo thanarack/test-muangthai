@@ -1,0 +1,49 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  ADMIN
+  USER
+}
+
+model User {
+  id        String     @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  email     String     @unique @db.VarChar(250)
+  password  String     @db.VarChar(250)
+  role      Role
+  name      String     @default("") @db.VarChar(250)
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  UserVote  UserVote[]
+}
+
+model UserVote {
+  id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  voteId    String   @db.Uuid
+  userId    String   @db.Uuid
+  createdAt DateTime @default(now())
+  vote      Vote     @relation(fields: [voteId], references: [id])
+  user      User     @relation(fields: [userId], references: [id])
+}
+
+model Vote {
+  id          String     @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  title       String     @db.VarChar(250)
+  description String     @db.VarChar(250)
+  voteNumber  Int
+  photoUrl    String
+  createdBy   String?
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+  deletedAt   DateTime?
+  UserVote    UserVote[]
+}

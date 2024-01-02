@@ -1,0 +1,37 @@
+version: '3'
+services:
+  react:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    ports:
+      - '5173:5173'
+    networks:
+      - my-network
+
+  nestjs:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    ports:
+      - '3000:3000'
+    depends_on:
+      - db
+      - react
+    restart: always
+    networks:
+      - my-network
+
+  db:
+    image: postgres
+    environment:
+      POSTGRES_DB: votes
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+    ports:
+      - '5432:5432'
+    networks:
+      - my-network
+
+networks:
+  my-network:
