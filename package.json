@@ -4,6 +4,8 @@
   "main": "index.js",
   "repository": "git@github.com:thanarack/test-muangthai-.git",
   "author": "Thanarack <thanarackc@gmail.com>",
-  "scripts": {},
+  "scripts": {
+    "start": "docker-compose up -d"
+  },
   "license": "MIT"
 }
