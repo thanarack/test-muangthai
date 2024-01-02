@@ -30,7 +30,8 @@ export const Input = styled.input`
 
 export const InputText = styled.textarea`
   box-sizing: border-box;
-  padding: 8px 16px;
+  border: 1px solid #e0e0e0;
+  padding: 12px 16px;
   width: 100%;
   border-left: 0;
   border-right: 0;
