@@ -1,4 +1,4 @@
-## Require
+## Software Requirements
   - Docker
   - Node.js 18+
   - Fast Internet :D
@@ -7,6 +7,7 @@
 #### Start run this docker command
 
 ```docker compose up -d```
+or ```yarn start```
  - After that you can enter link below to play.
  - Enjoy xD.
 
