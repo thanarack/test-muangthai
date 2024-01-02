@@ -7,7 +7,7 @@ services:
     ports:
       - '5173:5173'
     networks:
-      - my-network
+      - m-network
 
   nestjs:
     build:
@@ -18,12 +18,12 @@ services:
     depends_on:
       - db
       - react
-    restart: always
+    # restart: always
     networks:
-      - my-network
+      - m-network
 
   db:
-    image: postgres
+    image: postgres:16.1-alpine
     environment:
       POSTGRES_DB: votes
       POSTGRES_USER: admin
@@ -31,7 +31,7 @@ services:
     ports:
       - '5432:5432'
     networks:
-      - my-network
+      - m-network
 
 networks:
-  my-network:
+  m-network:
